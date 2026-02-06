@@ -38,7 +38,7 @@ jobs:
         run: pnpm ext:package
 
       - name: Publish Extension
-        run: ext:publish
+        run: pnpm ext:publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VSCE_PAT: ${{secrets.VSCE_PAT}}
