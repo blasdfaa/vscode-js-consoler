@@ -2,7 +2,7 @@
   "publisher": "blasdfaa",
   "name": "js-consoler",
   "displayName": "JS Consoler",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "packageManager": "pnpm@10.27.0",
   "description": "Quickly insert console.log() for selected code",
