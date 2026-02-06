@@ -8,13 +8,13 @@
   "description": "Quickly insert console.log() for selected code",
   "author": "blasdfaa",
   "license": "MIT",
-  "categories": [
-    "Other"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/blasdfaa/vscode-js-consoler"
   },
+  "categories": [
+    "Other"
+  ],
   "main": "./dist/index.cjs",
   "icon": "res/icon.png",
   "files": [
