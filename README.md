@@ -4,6 +4,14 @@ Quickly insert `console.log()` for selected code in VS Code.
 
 Select a variable or expression, hit the shortcut — a `console.log()` with a label appears on the next line, properly indented.
 
+## Installation
+
+Install from [Open VSX Registry](https://open-vsx.org/extension/blasdfaa/js-consoler):
+
+```sh
+ext install blasdfaa.js-consoler
+```
+
 ## Usage
 
 1. Select text in the editor
@@ -22,6 +30,7 @@ Without selection, an empty `console.log()` is inserted.
 | Key | Description | Default |
 | --- | --- | --- |
 | `js-consoler.logTemplate` | Log statement template. `{selected}` is replaced with the selected text. | `console.log('{selected}', {selected})` |
+| `js-consoler.enableCodeActions` | Show "Log variable" quick actions (lightbulb) in the editor. | `true` |
 
 ### Template examples
 

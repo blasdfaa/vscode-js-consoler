@@ -25,7 +25,14 @@
   "engines": {
     "vscode": "^1.97.0"
   },
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:vue",
+    "onLanguage:svelte"
+  ],
   "contributes": {
     "commands": [
       {
@@ -49,6 +56,11 @@
           "type": "string",
           "default": "console.log('{selected}', {selected})",
           "description": "Template for console.log insertion. Use {selected} as placeholder for selected text."
+        },
+        "js-consoler.enableCodeActions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show 'Log variable' quick actions (lightbulb) in the editor."
         }
       }
     }
