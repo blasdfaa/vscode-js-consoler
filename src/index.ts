@@ -1,4 +1,4 @@
-import { defineExtension, useCommand, useDisposable } from 'reactive-vscode'
+import { defineExtension, useCommands, useDisposable } from 'reactive-vscode'
 import { CodeActionKind, languages } from 'vscode'
 import { insertLog } from './commands'
 import { config } from './config'
@@ -11,7 +11,9 @@ import { logger } from './utils'
 const { activate, deactivate } = defineExtension(() => {
   logger.info('JS Consoler activated')
 
-  useCommand(commands.insertLog, insertLog)
+  useCommands({
+    [commands.insertLog]: insertLog,
+  })
 
   if (config.enableHighlight) {
     setupHighlight()
