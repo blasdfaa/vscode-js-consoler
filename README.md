@@ -29,8 +29,15 @@ Without selection, an empty `console.log()` is inserted.
 
 | Key | Description | Default |
 | --- | --- | --- |
-| `js-consoler.logTemplate` | Log statement template. `{selected}` is replaced with the selected text. | `console.log('{selected}', {selected})` |
+| `js-consoler.logTemplate` | Log statement template. See [placeholders](#template-placeholders) below. | `console.log('{selected}', {selected})` |
 | `js-consoler.enableCodeActions` | Show "Log variable" quick actions (lightbulb) in the editor. | `true` |
+
+### Template placeholders
+
+| Placeholder | Description |
+| --- | --- |
+| `{selected}` | Selected text or variable name |
+| `{line}` | Line number where the log is inserted (1-based) |
 
 ### Template examples
 
@@ -43,6 +50,9 @@ Without selection, an empty `console.log()` is inserted.
 
 // console.warn
 "js-consoler.logTemplate": "console.warn('{selected}', {selected})"
+
+// With line number
+"js-consoler.logTemplate": "console.log('[{line}] {selected}', {selected})"
 
 // JSON output
 "js-consoler.logTemplate": "console.log(JSON.stringify({selected}, null, 2))"

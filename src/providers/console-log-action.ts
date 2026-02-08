@@ -50,7 +50,8 @@ export class ConsoleLogActionProvider {
 
     const line = document.lineAt(range.start.line)
     const indentation = line.text.match(/^\s*/)?.[0] ?? ''
-    const logStatement = buildLogStatement(text)
+    const insertLineNumber = range.start.line + 2
+    const logStatement = buildLogStatement(text, insertLineNumber)
     const insertPosition = new Position(line.range.end.line, line.range.end.character)
 
     const edit = new WorkspaceEdit()

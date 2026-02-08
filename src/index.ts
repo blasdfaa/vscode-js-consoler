@@ -19,7 +19,8 @@ const { activate, deactivate } = defineExtension(() => {
 
     const currentLine = editor.document.lineAt(selection.end.line)
     const indentation = currentLine.text.match(/^\s*/)?.[0] ?? ''
-    const logStatement = buildLogStatement(text)
+    const insertLineNumber = selection.end.line + 2
+    const logStatement = buildLogStatement(text, insertLineNumber)
 
     const insertPosition = currentLine.range.end
     editor.edit((editBuilder) => {

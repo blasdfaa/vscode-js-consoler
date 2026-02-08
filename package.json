@@ -55,7 +55,7 @@
         "js-consoler.logTemplate": {
           "type": "string",
           "default": "console.log('{selected}', {selected})",
-          "description": "Template for console.log insertion. Use {selected} as placeholder for selected text."
+          "description": "Template for console.log insertion. Use {selected} as placeholder for selected text, {line} for line number."
         },
         "js-consoler.enableCodeActions": {
           "type": "boolean",
