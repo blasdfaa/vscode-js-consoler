@@ -2,8 +2,10 @@ import { defineExtension, useCommand, useDisposable } from 'reactive-vscode'
 import { CodeActionKind, languages, window } from 'vscode'
 import { config } from './config'
 import { commands } from './generated/meta'
+import { setupHighlight } from './highlight'
+import { SUPPORTED_LANGUAGES } from './languages'
 import { buildLogStatement } from './log'
-import { ConsoleLogActionProvider, SUPPORTED_LANGUAGES } from './providers/console-log-action'
+import { ConsoleLogActionProvider } from './providers/console-log-action'
 import { logger } from './utils'
 
 const { activate, deactivate } = defineExtension(() => {
@@ -27,6 +29,10 @@ const { activate, deactivate } = defineExtension(() => {
       editBuilder.insert(insertPosition, `\n${indentation}${logStatement}`)
     })
   })
+
+  if (config.enableHighlight) {
+    setupHighlight()
+  }
 
   if (config.enableCodeActions) {
     useDisposable(

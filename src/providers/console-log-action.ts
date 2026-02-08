@@ -8,15 +8,6 @@ function actionTitle(label: string): string {
   return `${displayName}: ${label}`
 }
 
-export const SUPPORTED_LANGUAGES = [
-  'javascript',
-  'javascriptreact',
-  'typescript',
-  'typescriptreact',
-  'vue',
-  'svelte',
-]
-
 export class ConsoleLogActionProvider {
   static readonly providedCodeActionKinds = [CodeActionKind.Refactor]
 

@@ -1,0 +1,8 @@
+export const SUPPORTED_LANGUAGES = [
+  'javascript',
+  'javascriptreact',
+  'typescript',
+  'typescriptreact',
+  'vue',
+  'svelte',
+]

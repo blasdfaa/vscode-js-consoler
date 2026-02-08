@@ -31,6 +31,7 @@ Without selection, an empty `console.log()` is inserted.
 | --- | --- | --- |
 | `js-consoler.logTemplate` | Log statement template. See [placeholders](#template-placeholders) below. | `console.log('{selected}', {selected})` |
 | `js-consoler.enableCodeActions` | Show "Log variable" quick actions (lightbulb) in the editor. | `true` |
+| `js-consoler.enableHighlight` | Highlight `console.*` statements in the editor. | `false` |
 
 ### Template placeholders
 

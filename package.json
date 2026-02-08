@@ -61,9 +61,26 @@
           "type": "boolean",
           "default": true,
           "description": "Show 'Log variable' quick actions (lightbulb) in the editor."
+        },
+        "js-consoler.enableHighlight": {
+          "type": "boolean",
+          "default": false,
+          "description": "Highlight console statements in the editor."
         }
       }
-    }
+    },
+    "colors": [
+      {
+        "id": "jsConsoler.highlightBackground",
+        "description": "Background color for highlighted console statements",
+        "defaults": {
+          "light": "#fff3cd",
+          "dark": "#3a3a2a",
+          "highContrast": "#ffcc00",
+          "highContrastLight": "#fff3cd"
+        }
+      }
+    ]
   },
   "scripts": {
     "build": "tsdown src/index.ts --external vscode",
