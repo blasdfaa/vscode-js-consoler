@@ -1,4 +1,5 @@
-import { window } from 'vscode'
+import type { TextEditor } from 'vscode'
+import { Position, Selection, window } from 'vscode'
 import { buildLogStatement } from '../log'
 
 export function insertLog() {
@@ -15,7 +16,24 @@ export function insertLog() {
   const logStatement = buildLogStatement(text, insertLineNumber)
 
   const insertPosition = currentLine.range.end
-  editor.edit((editBuilder) => {
-    editBuilder.insert(insertPosition, `\n${indentation}${logStatement}`)
-  })
+  const fullLogStatement = `\n${indentation}${logStatement}`
+
+  editor
+    .edit((editBuilder) => {
+      editBuilder.insert(insertPosition, fullLogStatement)
+    })
+    .then((success) => {
+      if (success) {
+        moveCursorToLineEnd(editor, selection.end.line + 1)
+      }
+    })
+}
+
+function moveCursorToLineEnd(editor: TextEditor, line: number) {
+  if (line >= editor.document.lineCount)
+    return
+
+  const lineText = editor.document.lineAt(line).text
+  const newPosition = new Position(line, lineText.length)
+  editor.selection = new Selection(newPosition, newPosition)
 }
